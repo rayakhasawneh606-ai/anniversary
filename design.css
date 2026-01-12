@@ -1,0 +1,123 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #4b2326, #6a2f35);
+  color: #fff6ec;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  color: #ffd98e;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 25px;
+  margin: 40px auto;
+  max-width: 420px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.countdown span {
+  font-size: 1.8rem;
+  display: block;
+}
+
+.section {
+  margin: 80px 0;
+}
+
+.big-number {
+  font-size: 3rem;
+  color: #ffcad4;
+}
+
+.caption {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.milestones {
+  list-style: none;
+  padding: 0;
+}
+
+.milestones li {
+  margin: 10px 0;
+}
+
+.paragraph {
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+td {
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 10px;
+}
+
+.secret {
+  background: none;
+  border: none;
+  color: #ffb3c1;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+main.container {
+  position: relative;
+  z-index: 1; /* above hearts */
+}
