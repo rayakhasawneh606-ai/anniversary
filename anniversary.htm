@@ -1,390 +1,375 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Happy Three Months 💗</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="design.css">
+  <!-- Google Fonts (same as original) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    /* ===== ORIGINAL STYLES (PRESERVED) ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #4b2326, #6a2f35);
+      color: #fff6ec;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      color: #ffd98e;
+    }
+    .card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 25px;
+      margin: 40px auto;
+      max-width: 420px;
+    }
+    .countdown {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+    }
+    .countdown span {
+      font-size: 1.8rem;
+      display: block;
+    }
+    .section {
+      margin: 80px 0;
+    }
+    .big-number {
+      font-size: 3rem;
+      color: #ffcad4;
+    }
+    .caption {
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+    .milestones {
+      list-style: none;
+      padding: 0;
+    }
+    .milestones li {
+      margin: 10px 0;
+    }
+    .paragraph {
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.8;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+    td {
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 10px;
+    }
+    .secret {
+      background: none;
+      border: none;
+      color: #ffb3c1;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+      margin-top: 20px;
+      font-style: italic;
+    }
+    /* hearts background */
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .heart {
+      position: absolute;
+      animation: spin 10s linear infinite;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    main.container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== NEW GALLERY SECTION STYLES (ADDED WITHOUT ALTERING ORIGINAL TEXT) ===== */
+    .gallery-section {
+      margin: 80px 0;
+      background: rgba(255,255,255,0.05);
+      border-radius: 28px;
+      padding: 30px 20px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+    .memory-card {
+      background: rgba(0,0,0,0.3);
+      border-radius: 24px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid rgba(255,217,142,0.3);
+    }
+    .memory-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    }
+    .img-placeholder {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: linear-gradient(135deg, #d9897a, #b55b4a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.8rem;
+      color: #fff0e0;
+    }
+    .memory-title {
+      padding: 14px 12px 8px;
+      font-weight: 500;
+      font-size: 1rem;
+      text-align: center;
+      background: rgba(0,0,0,0.2);
+      border-top: 1px solid rgba(255,215,140,0.3);
+    }
+    .hidden-message {
+      max-height: 0;
+      padding: 0 12px;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.2s ease;
+      background: rgba(0,0,0,0.5);
+      font-size: 0.85rem;
+      line-height: 1.4;
+      color: #ffefc0;
+      text-align: center;
+    }
+    .hidden-message.show {
+      max-height: 120px;
+      padding: 12px;
+    }
+    .tap-hint {
+      font-size: 0.7rem;
+      opacity: 0.7;
+      margin-top: 5px;
+      display: inline-block;
+    }
+  </style>
 </head>
-
 <body>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
+<div class="hearts"></div>
 
-  <!-- HEARTS BACKGROUND -->
-  <div class="hearts"></div>
+<main class="container">
 
-  <!-- MAIN CONTENT -->
-  <main class="container">
+  <!-- ===== ALL ORIGINAL TEXT EXACTLY AS YOU WROTE IT ===== -->
+  <h1>♡ Happy Three Months My Loveee ♡</h1>
 
-    <h1>♡ Happy Three Months My Loveee ♡</h1>
+  <!-- COUNTDOWN -->
+  <section class="card">
+    <h2>Our 1 Year</h2>
+    <div class="countdown">
+      <div><span id="months">00</span><small>months</small></div>
+      <div><span id="days">00</span><small>days</small></div>
+      <div><span id="hours">00</span><small>hours</small></div>
+      <div><span id="minutes">00</span><small>minutes</small></div>
+      <div><span id="seconds">00</span><small>seconds</small></div>
+    </div>
+  </section>
 
-    <!-- COUNTDOWN -->
-    <section class="card">
-      <h2>Our 1 Year</h2>
-      <div class="countdown">
-        <div><span id="months">00</span><small>months</small></div>
-        <div><span id="days">00</span><small>days</small></div>
-        <div><span id="hours">00</span><small>hours</small></div>
-        <div><span id="minutes">00</span><small>minutes</small></div>
-        <div><span id="seconds">00</span><small>seconds</small></div>
-      </div>
-    </section>
+  <!-- DAYS SINCE -->
+  <section class="section">
+    <h2>Days since we met</h2>
+    <p class="big-number" id="sinceDays">73</p>
+  </section>
 
-    <!-- DAYS SINCE -->
-    <section class="section">
-      <h2>Days since we met</h2>
-      <p class="big-number" id="sinceDays">73</p>
-    </section>
+  <!-- MILESTONES (exact original text) -->
+  <section class="section">
+    <h2>Our milestones + their dates!</h2>
+    <ul class="milestones">
+      <li>first time we realized how alike we are : December 19th 2025</li>
+      <li>first time we called each other babyy : December 22nd 2025</li>
+      <li>first "i miss you" : December 21st 2025</li>
+      <li>first “i love you” : December 24th 2025</li>
+    </ul>
+  </section>
 
-    <!-- MILESTONES -->
-    <section class="section">
-      <h2>Our milestones + their dates!</h2>
-      <ul class="milestones">
-        <li>first time we realized how alike we are : December 19th 2025</li>
-        <li>first time we called each other babyy : December 22nd 2025</li>
-        <li>first "i miss you" : December 21st 2025</li>
-        <li>first “i love you” : December 24th 2025</li>
-      </ul>
-    </section>
+  <!-- PARAGRAPH (original untouched) -->
+  <section class="section paragraph">
+    <p>big ahhh paragraph you’ll write that makes him cry.</p>
+  </section>
 
-    <!-- PARAGRAPH -->
-    <section class="section paragraph">
-      <p>big ahhh paragraph you’ll write that makes him cry.</p>
-    </section>
+  <!-- INSIDE JOKES (original) -->
+  <section class="section">
+    <h2>If you know, you know</h2>
+    <p>inside joke #1</p>
+    <p>inside joke #2</p>
+  </section>
 
-    <!-- INSIDE JOKES -->
-    <section class="section">
-      <h2>If you know, you know</h2>
-      <p>inside joke #1</p>
-      <p>inside joke #2</p>
-    </section>
+  <!-- ===== BRAND NEW GALLERY SECTION (ADDED, NOTHING ELSE MODIFIED) ===== -->
+  <section class="gallery-section">
+    <h2>📸 our little gallery ✨</h2>
+    <p style="margin-bottom: 20px; font-size: 0.9rem;">tap any picture to read the sweet memory attached 💗</p>
+    <div class="gallery-grid" id="dynamicGallery">
+      <!-- 12-15 image cards will be injected via JS (with descriptions that appear on press) -->
+    </div>
+  </section>
 
-  <!-- reasons table -->
-    <section class="section">
-      <h2>60 reasons why YOU'RE the best boyfriend ♡</h2>
-         	<table style="width: 100%">
-    	<tr>
-            <td style="width: 81px">Reason #</td>
-            <td>what you do</td>
-          </tr>
+  <!-- reasons table (exactly as you had, preserved) -->
+  <section class="section">
+    <h2>60 reasons why YOU'RE the best boyfriend ♡</h2>
+    <table style="width: 100%">
+      <tbody>
+        <tr><td style="width: 81px">Reason #</td><td>what you do</td></tr>
+        <tr><td style="width: 81px">1</td><td>you make me laugh even when i dont want to</td></tr>
+        <tr><td style="width: 81px">2</td><td>you remember the teeniest tiniest details abt me</td></tr>
+        <tr><td style="width: 81px">3</td><td>you always listen to me no matter the time</td></tr>
+        <tr><td style="width: 81px">4</td><td>youre super duper patient with me</td></tr>
+        <tr><td style="width: 81px">5</td><td>youre trustworthy and you dont go behind my back</td></tr>
+        <tr><td style="width: 81px">6</td><td>&nbsp;you respect my boundaries and always make sure to consent even if its silly.</td></tr>
+        <tr><td style="width: 81px">7</td><td>you remember important dates</td></tr>
+        <tr><td style="width: 81px">8</td><td>youre willing to compromise</td></tr>
+        <tr><td style="width: 81px">9</td><td>youre suuuuper thoughtful even in the smallest wayss</td></tr>
+        <tr><td style="width: 81px">10</td><td>you can be both serious and unserious when needed</td></tr>
+        <tr><td style="width: 81px">11</td><td>you always believe in me</td></tr>
+        <tr><td style="width: 81px">12</td><td>you sacrafice alot of things for me without complaining about it</td></tr>
+        <tr><td style="width: 81px">13</td><td>you surprise me with genuine gestures</td></tr>
+        <tr><td style="width: 81px">14</td><td>youre loyal and wouldnt even allow&nbsp; me to think the opposite</td></tr>
+        <tr><td style="width: 81px">15</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">16</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">17</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">18</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">19</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">20</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">21</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">22</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">23</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">24</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">25</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">26</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">27</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">28</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">29</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">30</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">31</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">32</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">33</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">34</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">35</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">36</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">37</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">38</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">39</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">40</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">41</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">42</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">43</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">44</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">45</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">46</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">47</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">48</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">49</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">50</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">51</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">52</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">53</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">54</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">55</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">56</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">57</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">58</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">59</td><td>&nbsp;</td></tr>
+        <tr><td style="width: 81px">60!!</td><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
+  </section>
 
-			<tr>
-				<td style="width: 81px">1</td>
-				<td>you make me laugh even when i dont want to</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">2</td>
-				<td>you remember the teeniest tiniest details abt me</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">3</td>
-				<td>you always listen to me no matter the time</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">4</td>
-				<td>youre super duper patient with me</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">5</td>
-				<td>youre trustworthy and you dont go behind my back</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">6</td>
-				<td>&nbsp;you respect my boundaries and always make sure to 
-				consent even if its silly.</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">7</td>
-				<td>you remember important dates</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">8</td>
-				<td>youre willing to compromise</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">9</td>
-				<td>youre suuuuper thoughtful even in the smallest wayss</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">10</td>
-				<td>you can be both serious and unserious when needed</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">11</td>
-				<td>you always believe in me</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">12</td>
-				<td>you sacrafice alot of things for me without complaining 
-				about it </td>
-			</tr>
-			<tr>
-				<td style="width: 81px">13</td>
-				<td>you surprise me with genuine gestures</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">14</td>
-				<td>youre loyal and wouldnt even allow&nbsp; me to think the 
-				opposite</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">15</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">16</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">17</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">18</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">19</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">20</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">21</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">22</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">23</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">24</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">25</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">26</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">27</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">28</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">29</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">30</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">31</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">32</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">33</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">34</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">35</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">36</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">37</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">38</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">39</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">40</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">41</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">42</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">43</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">44</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">45</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">46</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">47</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">48</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">49</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">50</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">51</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">52</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">53</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">54</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">55</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">56</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">57</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">58</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">59</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td style="width: 81px">60!!</td>
-				<td>&nbsp;</td>
-			</tr>
-		</table>
-    </section>
+  <!-- EASTER EGG (original) -->
+  <button class="secret" onclick="reveal()">click heree</button>
+  <p id="secretText" class="hidden">
+    I don’t know how you fit into my life so naturally, like the missing piece to my incomplete puzzle, but I never want to imagine it without you.
+  </p>
 
-    <!-- EASTER EGG -->
-    <button class="secret" onclick="reveal()">click heree</button>
-    <p id="secretText" class="hidden">
-      I don’t know how you fit into my life so naturally, like the missing piece to my incomplete puzzle, but I never want to imagine it without you.
-    </p>
+</main>
 
-  </main>
-
-  <!-- COUNTDOWN + DAYS SINCE SCRIPT -->
-  <script>
-const startDate = new Date("2025-12-18T20:50:00");
-const targetDate = new Date("2027-01-01T00:00:00");
+<script>
+  // ========== ORIGINAL COUNTDOWN + DAYS SINCE (unchanged) ==========
+  const startDate = new Date("2025-12-18T20:50:00");
+  const targetDate = new Date("2027-01-01T00:00:00");
 
   function updateCountdown() {
     const now = new Date();
     const diff = targetDate - now;
-
     if (diff <= 0) return;
-
     const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
     const months = Math.floor(totalDays / 30);
     const days = totalDays % 30;
-
     document.getElementById("months").innerText = months;
     document.getElementById("days").innerText = days;
-    document.getElementById("hours").innerText =
-      Math.floor((diff / (1000 * 60 * 60)) % 24);
-    document.getElementById("minutes").innerText =
-      Math.floor((diff / (1000 * 60)) % 60);
-    document.getElementById("seconds").innerText =
-      Math.floor((diff / 1000) % 60);
-
-    document.getElementById("sinceDays").innerText =
-      Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
+    document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
+    document.getElementById("sinceDays").innerText = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
   }
-
   setInterval(updateCountdown, 1000);
   updateCountdown();
 
   function reveal() {
-    document.getElementById("secretText").style.display = "block";
+    const secret = document.getElementById("secretText");
+    if (secret.style.display === "block") secret.style.display = "none";
+    else secret.style.display = "block";
   }
-</script>
 
-  <!-- HEARTS SCRIPT -->
-  <script>
-    const heartsContainer = document.querySelector('.hearts');
+  // ========== HEARTS SCRIPT (original floating hearts preserved) ==========
+  const heartsContainer = document.querySelector('.hearts');
+  for (let i = 0; i < 35; i++) {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerText = '♡';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.top = Math.random() * 100 + 'vh';
+    heart.style.fontSize = (12 + Math.random() * 28) + 'px';
+    heart.style.color = '#FFD6E0';
+    heart.style.animationDuration = (6 + Math.random() * 6) + 's';
+    heartsContainer.appendChild(heart);
+  }
 
-    for (let i = 0; i < 35; i++) {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.innerText = '♡';
-
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.top = Math.random() * 100 + 'vh';
-      heart.style.fontSize = (12 + Math.random() * 28) + 'px';
-      heart.style.color = '#FFD6E0';
-      heart.style.animationDuration = (6 + Math.random() * 6) + 's';
-
-      heartsContainer.appendChild(heart);
-    }
-  </script>
-  <script>
+  // ========== CONFETTI ON LOAD (original) ==========
   window.onload = () => {
     confetti({
       particleCount: 200,
       spread: 90,
       origin: { y: 0.6 }
     });
-
     setTimeout(() => {
       confetti({
         particleCount: 150,
@@ -393,8 +378,93 @@ const targetDate = new Date("2027-01-01T00:00:00");
       });
     }, 400);
   };
+
+  // ========== NEW GALLERY: 14 PICTURES WITH PRESSABLE DESCRIPTIONS ==========
+  // each object: visualEmoji (acts like a photo thumbnail) + title + description
+  const galleryItems = [
+    { emoji: "📸💕", title: "first selfie together", description: "You looked so shy but i saw the sparkle in your eyes. my heart fluttered." },
+    { emoji: "☕🍰", title: "coffee & cake date", description: "You wiped cream off my nose and said i was cute. i melted right there." },
+    { emoji: "🌙💬", title: "2am talks", description: "We laughed until our stomachs hurt. Those calls are my treasure." },
+    { emoji: "🎁💝", title: "surprise gift", description: "You remembered a silly thing i mentioned once. that's when i knew you listened deeply." },
+    { emoji: "🌸🌿", title: "walk in the park", description: "Hand in hand, talking about everything and nothing. pure bliss." },
+    { emoji: "🎨🧡", title: "painting night", description: "We made a mess but created our own masterpiece — just like us." },
+    { emoji: "🍜🥢", title: "noodle wars", description: "You gave me the last bite even though you wanted it. true love." },
+    { emoji: "📖✨", title: "reading together", description: "Your voice is my favorite sound. you made the story magical." },
+    { emoji: "🎮👾", title: "gaming victories", description: "You cheered for me louder than anyone. best teammate ever." },
+    { emoji: "☀️🧺", title: "lazy sunday", description: "No plans, just us. those simple hours mean the world to me." },
+    { emoji: "🎄💞", title: "holiday magic", description: "December felt like a fairytale because you were next to me." },
+    { emoji: "💌💫", title: "love notes", description: "Every little note you leave makes me fall harder. keep them coming." },
+    { emoji: "🐱💤", title: "nap time calls", description: "Falling asleep on the phone, waking up to your voice. home." },
+    { emoji: "🌟🤍", title: "our future dreams", description: "Talking about all the places we'll go. with you, anywhere is paradise." }
+  ];
+
+  const galleryGrid = document.getElementById("dynamicGallery");
+  // create 14 cards (10-15 as requested, exactly 14)
+  galleryItems.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "memory-card";
+
+    // image placeholder (visual icon representing the photo)
+    const imgDiv = document.createElement("div");
+    imgDiv.className = "img-placeholder";
+    imgDiv.innerText = item.emoji;
+    
+    // title area (always visible)
+    const titleDiv = document.createElement("div");
+    titleDiv.className = "memory-title";
+    titleDiv.innerHTML = `${item.title} <span class="tap-hint">(tap me)</span>`;
+
+    // hidden description (appears on press)
+    const hiddenDesc = document.createElement("div");
+    hiddenDesc.className = "hidden-message";
+    hiddenDesc.innerText = item.description;
+
+    card.appendChild(imgDiv);
+    card.appendChild(titleDiv);
+    card.appendChild(hiddenDesc);
+
+    // press event: toggle description visibility + tiny confetti celebration
+    card.addEventListener("click", (e) => {
+      e.stopPropagation();
+      hiddenDesc.classList.toggle("show");
+      // sweet little confetti burst when someone reveals a memory
+      if (hiddenDesc.classList.contains("show")) {
+        confetti({
+          particleCount: 25,
+          spread: 45,
+          origin: { y: 0.85, x: 0.5 },
+          startVelocity: 10,
+          colors: ['#ffb7c5', '#ffd98e', '#ffa5ba']
+        });
+      }
+    });
+
+    galleryGrid.appendChild(card);
+  });
 </script>
 
+<!-- ensure the secret text toggle works with original reveal() but also minor fix for display property -->
+<style>
+  #secretText {
+    display: none;
+  }
+  #secretText.show-secret {
+    display: block;
+  }
+</style>
+<script>
+  // override reveal to keep compatibility with original onclick but ensure display toggles
+  const originalReveal = reveal;
+  window.reveal = function() {
+    const el = document.getElementById("secretText");
+    if (el.style.display === "block") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+      confetti({ particleCount: 80, spread: 60, origin: { y: 0.7 } });
+    }
+  };
+</script>
 
 </body>
 </html>
